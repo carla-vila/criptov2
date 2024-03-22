@@ -3,7 +3,6 @@
 
 //gcc rsa-v2.c ../config/keys.c -o rsa -I/opt/homebrew/opt/gmp/include -L/opt/homebrew/opt/gmp/lib -lgmp
 
-// Suponiendo que estas variables se definen e inicializan en otro lugar
 extern mpz_t client_p, client_q;
 
 void initPrimes();
@@ -20,7 +19,7 @@ int main() {
     mpz_t n, phi, e, d, ciphertext, decrypted_msg;
 
     // La variable 'msg' solo debe ser inicializada una vez.
-    mpz_t msg; // La declaración de 'msg' se mantiene aquí junto con las otras variables.
+    mpz_t msg; 
 
     // Inicialización de variables GMP
     mpz_inits(n, phi, e, d, msg, ciphertext, decrypted_msg, NULL);
